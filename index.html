@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Face Emotion Recognition</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">AI Vision Project</p>
+          <h1>Face Emotion Recognition</h1>
+          <p>
+            Upload a face image and get a clean emotion prediction with
+            confidence scores.
+          </p>
+        </div>
+
+        <div class="status-card" aria-label="Project status">
+          <span class="pulse"></span>
+          <div>
+            <strong>Model Interface</strong>
+            <small>Ready for image upload</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="workspace" aria-label="Emotion recognition workspace">
+        <div class="upload-panel">
+          <div class="panel-heading">
+            <span class="step">01</span>
+            <div>
+              <h2>Upload Face Image</h2>
+              <p>Choose a JPG, PNG, or WEBP image.</p>
+            </div>
+          </div>
+
+          <label class="drop-zone" id="dropZone" for="imageInput">
+            <input id="imageInput" type="file" accept="image/*" />
+            <span class="upload-icon" aria-hidden="true">+</span>
+            <strong>Drop image here or browse</strong>
+            <small>Best results with a clear front-facing face</small>
+          </label>
+
+          <div class="preview-wrap is-empty" id="previewWrap">
+            <img id="previewImage" alt="Uploaded face preview" />
+            <div class="empty-preview">
+              <span></span>
+              <p>No image selected yet</p>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button class="secondary-btn" id="clearBtn" type="button">
+              Clear
+            </button>
+            <button class="primary-btn" id="analyzeBtn" type="button" disabled>
+              Analyze Emotion
+            </button>
+          </div>
+        </div>
+
+        <div class="result-panel">
+          <div class="panel-heading">
+            <span class="step">02</span>
+            <div>
+              <h2>Recognition Result</h2>
+              <p>Your detected emotion appears here.</p>
+            </div>
+          </div>
+
+          <div class="result-state" id="resultState">
+            <div class="face-mark" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <i></i>
+            </div>
+            <p>Upload an image to start analysis.</p>
+          </div>
+
+          <div class="result-card hidden" id="resultCard">
+            <p class="result-label">Detected emotion</p>
+            <h3 id="emotionName">Happy</h3>
+            <div class="confidence-row">
+              <span>Confidence</span>
+              <strong id="confidenceText">92%</strong>
+            </div>
+            <div class="meter">
+              <span id="confidenceBar"></span>
+            </div>
+          </div>
+
+          <div class="scores hidden" id="scoresList" aria-label="Emotion scores"></div>
+        </div>
+      </section>
+    </main>
+
+    <script src="style.js"></script>
+  </body>
+</html>
